@@ -32,16 +32,16 @@ const Autofill = ({ suggestions }) => {
     switch(e.keyCode) {
       case 38:
         idx = activeSuggestionIdx;
-        if(idx - 1 !== 0)
+        if(idx !== 0)
           setActiveSuggestionIdx(idx - 1);
         break;
       case 40:
         idx = activeSuggestionIdx;
-        if(idx + 1 !== suggestions.length)
+        if(idx !== suggestions.length)
           setActiveSuggestionIdx(idx + 1);
         break;
       case 13:
-        setInput(suggestions[activeSuggestionIdx]);
+        setInput(filteredSuggestions[activeSuggestionIdx]);
         setFilteredSuggestions([]);
         setActiveSuggestionIdx(0);
         setShowSuggestions(false);
